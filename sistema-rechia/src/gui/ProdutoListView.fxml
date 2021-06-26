@@ -5,7 +5,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -23,14 +22,12 @@
       <ToolBar prefHeight="40.0" prefWidth="200.0">
         <items>
           <Button fx:id="btNew" mnemonicParsing="false" onAction="#onBtNewAction" text="Novo Produto" />
-            <TextField />
-            <Button mnemonicParsing="false" text="Buscar" />
         </items>
       </ToolBar>
       <TableView fx:id="tableViewProduto" prefHeight="200.0" prefWidth="200.0">
         <columns>
-          <TableColumn fx:id="tableColumnCodInterno" prefWidth="75.0" text="Código" />
-          <TableColumn fx:id="tableColumnReferencia" prefWidth="75.0" text="Referência" />
+          <TableColumn fx:id="tableColumnCodInterno" prefWidth="75.0" text="Codigo" />
+          <TableColumn fx:id="tableColumnReferencia" prefWidth="75.0" text="Referencia" />
             <TableColumn fx:id="tableColumnNome" prefWidth="75.0" text="Nome" />
             <TableColumn fx:id="tableColumnMarca" prefWidth="75.0" text="Marca" />
             <TableColumn fx:id="tableColumnPreco" prefWidth="75.0" text="Preço" />

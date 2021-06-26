@@ -4,7 +4,9 @@ import java.io.Serializable;
 
 public class Produto implements Serializable {
 	
-	private Integer codInterno;
+	private static final long serialVersionUID = 1L;
+	
+	private String codInterno;
 	private String referencia;
 	private String nome;
 	private String marca;
@@ -13,21 +15,21 @@ public class Produto implements Serializable {
 	public Produto () {
 		
 	}
-
-	public Produto(Integer codInterno, String referencia, String nome, String marca, Double preco) {
-		super();
+	
+	public Produto(String codInterno, String referencia, String nome, String marca, Double preco) {
 		this.codInterno = codInterno;
 		this.referencia = referencia;
 		this.nome = nome;
 		this.marca = marca;
 		this.preco = preco;
 	}
+	
 
-	public Integer getCodInterno() {
+	public String getCodInterno() {
 		return codInterno;
 	}
 
-	public void setCodInterno(Integer codInterno) {
+	public void setCodInterno(String codInterno) {
 		this.codInterno = codInterno;
 	}
 
@@ -92,7 +94,5 @@ public class Produto implements Serializable {
 	public String toString() {
 		return "Produto [codInterno=" + codInterno + "]";
 	}
-	
-	
 
 }
