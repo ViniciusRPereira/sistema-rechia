@@ -13,18 +13,21 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Menu;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.VBox;
 
 public class MainViewController implements Initializable {
 
 	@FXML
-	private Menu emitirRelatorio;
+	private MenuItem cadastrarProduto;
 	
 	@FXML
-	public void onMenuItemSellerAction() {
-		System.out.println("onMenuItemSellerAction");
-	}
+	private MenuItem listarProduto;
+	
+	@FXML
+	public void onMenuItemProdutoListView() {
+		loadView("/gui/ProdutoListView.fxml");	}
 	@FXML
 	public void onMenuItemDepartmentAction() {
 		System.out.println("onMenuItemDepartmentAction");

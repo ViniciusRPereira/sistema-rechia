@@ -27,7 +27,7 @@
                 <Menu mnemonicParsing="false" text="Produtos">
                      <items>
                         <MenuItem mnemonicParsing="false" onAction="#onMenuEmConstrucaoAction" text="Cadastrar Produto" />
-                        <MenuItem mnemonicParsing="false" onAction="#onMenuEmConstrucaoAction" text="Listar Produtos" />
+                        <MenuItem fx:id="listarProduto" mnemonicParsing="false" onAction="#onMenuItemProdutoListView" text="Listar Produtos" />
                      </items>
                 </Menu>
                   <Menu mnemonicParsing="false" text="Visitas">
