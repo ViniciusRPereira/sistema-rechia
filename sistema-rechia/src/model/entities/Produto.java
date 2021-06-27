@@ -6,7 +6,7 @@ public class Produto implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
-	private String codInterno;
+	private Integer codInterno;
 	private String referencia;
 	private String nome;
 	private String marca;
@@ -16,7 +16,7 @@ public class Produto implements Serializable {
 		
 	}
 	
-	public Produto(String codInterno, String referencia, String nome, String marca, Double preco) {
+	public Produto(Integer codInterno, String referencia, String nome, String marca, Double preco) {
 		this.codInterno = codInterno;
 		this.referencia = referencia;
 		this.nome = nome;
@@ -25,11 +25,11 @@ public class Produto implements Serializable {
 	}
 	
 
-	public String getCodInterno() {
+	public Integer getCodInterno() {
 		return codInterno;
 	}
 
-	public void setCodInterno(String codInterno) {
+	public void setCodInterno(Integer codInterno) {
 		this.codInterno = codInterno;
 	}
 
@@ -89,6 +89,8 @@ public class Produto implements Serializable {
 			return false;
 		return true;
 	}
+	
+	
 
 	@Override
 	public String toString() {

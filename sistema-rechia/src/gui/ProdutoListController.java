@@ -74,7 +74,7 @@ public class ProdutoListController implements Initializable {
 		if (service == null) {
 			throw new IllegalStateException("Service was null!");
 		}
-		List<Produto> list = service.findALL();
+		List<Produto> list = service.findAll();
 		obsList = FXCollections.observableArrayList(list);
 		tableViewProduto.setItems(obsList);
 	}
