@@ -7,17 +7,10 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="281.0" prefWidth="404.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/16">
+<AnchorPane prefHeight="249.0" prefWidth="404.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ProdutoFormController">
    <children>
-      <Label layoutX="18.0" layoutY="14.0" text="CADASTRO DE NOVO PRODUTO :" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <GridPane layoutX="18.0" layoutY="57.0" prefHeight="173.0" prefWidth="349.0" AnchorPane.leftAnchor="18.0" AnchorPane.topAnchor="57.0">
+      <GridPane layoutX="14.0" layoutY="21.0" prefHeight="173.0" prefWidth="349.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="21.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="112.0" minWidth="10.0" prefWidth="77.0" />
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="179.0" minWidth="10.0" prefWidth="166.0" />
@@ -36,14 +29,16 @@
             <Label text="Nome : " GridPane.rowIndex="2" />
             <Label text="Marca : " GridPane.rowIndex="3" />
             <Label text="Preço : " GridPane.rowIndex="4" />
-            <TextField prefHeight="25.0" prefWidth="79.0" GridPane.columnIndex="1" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <TextField prefHeight="25.0" prefWidth="58.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="codInterno" prefHeight="25.0" prefWidth="79.0" GridPane.columnIndex="1" />
+            <TextField fx:id="referencia" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="nome" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="marca" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="preco" prefHeight="25.0" prefWidth="58.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label fx:id="LabelErrorCodInterno" text="Label" GridPane.columnIndex="2" />
+            <Label fx:id="LabelErroPreco" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="4" />
          </children>
       </GridPane>
-      <Button layoutX="75.0" layoutY="242.0" mnemonicParsing="false" text="Cadrastrar" />
-      <Button layoutX="186.0" layoutY="242.0" mnemonicParsing="false" text="Cancelar" />
+      <Button fx:id="btCadastrar" layoutX="71.0" layoutY="206.0" mnemonicParsing="false" onAction="#onBtCadastrar" text="Cadrastrar" />
+      <Button fx:id="btCancelar" layoutX="182.0" layoutY="206.0" mnemonicParsing="false" onAction="#onBtCancelar" text="Cancelar" />
    </children>
 </AnchorPane>
