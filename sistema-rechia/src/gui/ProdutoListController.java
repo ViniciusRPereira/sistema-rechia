@@ -26,9 +26,8 @@ import javafx.stage.Stage;
 import model.entities.Produto;
 import model.services.ProdutoService;
 
-
 public class ProdutoListController implements Initializable {
-	
+
 	private ProdutoService service;
 
 	@FXML
@@ -51,16 +50,16 @@ public class ProdutoListController implements Initializable {
 
 	@FXML
 	private Button btNew;
-	
+
 	private ObservableList<Produto> obsList;
 
 	@FXML
 	public void onBtNewAction(ActionEvent event) {
 		Stage parentStage = Utils.currentStage(event);
 		Produto obj = new Produto();
-		createDialogForm(obj,"/gui/ProdutoForm.fxml", parentStage);
+		createDialogForm(obj, "/gui/ProdutoForm.fxml", parentStage);
 	}
-	
+
 	public void setProdutoService(ProdutoService service) {
 		this.service = service;
 	}
@@ -77,12 +76,12 @@ public class ProdutoListController implements Initializable {
 		tableColumnNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
 		tableColumnMarca.setCellValueFactory(new PropertyValueFactory<>("marca"));
 		tableColumnPreco.setCellValueFactory(new PropertyValueFactory<>("preco"));
-		
+
 		Stage stage = (Stage) Main.getMainScene().getWindow();
 		tableViewProduto.prefHeightProperty().bind(stage.heightProperty());
-		
+
 	}
-	
+
 	public void updateTableView() {
 		if (service == null) {
 			throw new IllegalStateException("Service was null!");
@@ -91,17 +90,17 @@ public class ProdutoListController implements Initializable {
 		obsList = FXCollections.observableArrayList(list);
 		tableViewProduto.setItems(obsList);
 	}
-	
+
 	private void createDialogForm(Produto obj, String absoluteName, Stage parentStage) {
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource(absoluteName));
 			Pane pane = loader.load();
-			
+
 			ProdutoFormController controller = loader.getController();
 			controller.setProduto(obj);
+			controller.setProdutoService(new ProdutoService());
 			controller.updateFormData();
-			
-			
+
 			Stage dialogStage = new Stage();
 			dialogStage.setTitle("Cadastro de novo produto");
 			dialogStage.setScene(new Scene(pane));
@@ -109,10 +108,9 @@ public class ProdutoListController implements Initializable {
 			dialogStage.initOwner(parentStage);
 			dialogStage.initModality(Modality.WINDOW_MODAL);
 			dialogStage.showAndWait();
-		}
-		catch (IOException e) {
+		} catch (IOException e) {
 			Alerts.showAlert("IO Exception", "Error loading view", e.getMessage(), AlertType.ERROR);
 		}
 	}
-	
+
 }

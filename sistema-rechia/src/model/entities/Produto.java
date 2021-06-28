@@ -3,19 +3,19 @@ package model.entities;
 import java.io.Serializable;
 
 public class Produto implements Serializable {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	private Integer codInterno;
 	private String referencia;
 	private String nome;
 	private String marca;
 	private Double preco;
-	
-	public Produto () {
-		
+
+	public Produto() {
+
 	}
-	
+
 	public Produto(Integer codInterno, String referencia, String nome, String marca, Double preco) {
 		this.codInterno = codInterno;
 		this.referencia = referencia;
@@ -23,7 +23,6 @@ public class Produto implements Serializable {
 		this.marca = marca;
 		this.preco = preco;
 	}
-	
 
 	public Integer getCodInterno() {
 		return codInterno;
@@ -89,8 +88,6 @@ public class Produto implements Serializable {
 			return false;
 		return true;
 	}
-	
-	
 
 	@Override
 	public String toString() {
