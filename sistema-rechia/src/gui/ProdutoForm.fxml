@@ -29,11 +29,11 @@
             <Label text="Nome : " GridPane.rowIndex="2" />
             <Label text="Marca : " GridPane.rowIndex="3" />
             <Label text="Preço : " GridPane.rowIndex="4" />
-            <TextField fx:id="codInterno" prefHeight="25.0" prefWidth="79.0" GridPane.columnIndex="1" />
-            <TextField fx:id="referencia" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField fx:id="nome" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField fx:id="marca" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <TextField fx:id="preco" prefHeight="25.0" prefWidth="58.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="txtCodInterno" prefHeight="25.0" prefWidth="79.0" GridPane.columnIndex="1" />
+            <TextField fx:id="txtReferencia" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="txtNome" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="txtMarca" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="txtPreco" prefHeight="25.0" prefWidth="58.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <Label fx:id="LabelErrorCodInterno" text="Label" GridPane.columnIndex="2" />
             <Label fx:id="LabelErroPreco" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="4" />
          </children>

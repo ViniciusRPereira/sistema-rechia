@@ -9,23 +9,30 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.GridPane;
+import model.entities.Produto;
 
 public class ProdutoFormController implements Initializable {
+	
+	private Produto entity;
+	
+	@FXML
+	private GridPane gPane;
 
 	@FXML
-	private TextField codInterno;
+	private TextField txtCodInterno;
 	
 	@FXML
-	private TextField referencia;
+	private TextField txtReferencia;
 	
 	@FXML
-	private TextField nome;
+	private TextField txtNome;
 	
 	@FXML
-	private TextField marca;
+	private TextField txtMarca;
 	
 	@FXML
-	private TextField preco;
+	private TextField txtPreco;
 	
 	@FXML
 	private Label LabelErrorCodInterno;
@@ -38,6 +45,10 @@ public class ProdutoFormController implements Initializable {
 	
 	@FXML
 	private Button btCancelar;
+	
+	public void setProduto (Produto entity) {
+		this.entity = entity;
+	}
 	
 	@FXML
 	public void onBtCadastrar () {
@@ -56,8 +67,20 @@ public class ProdutoFormController implements Initializable {
 	}
 	
 	private void initializeNodes() {
-		Constraints.setTextFieldInteger(codInterno);
-		Constraints.setTextFieldDouble(preco);
+		Constraints.setTextFieldInteger(txtCodInterno);
+		Constraints.setTextFieldDouble(txtPreco);
 	}
+	
+	public void updateFormData () {
+		if (entity == null) {
+			throw new IllegalStateException("Entity was null!");
+		}	
+		txtCodInterno.setText(String.valueOf(entity.getCodInterno()));
+		txtReferencia.setText(entity.getReferencia());
+		txtNome.setText(entity.getNome());
+		txtMarca.setText(entity.getMarca());
+		txtPreco.setText(String.valueOf(entity.getPreco()));
+	} 
+	
 
 }

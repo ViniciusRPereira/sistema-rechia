@@ -13,14 +13,6 @@ import model.entities.Produto;
 
  public class ProdutoService {
 	
-	/* public List<Produto> findAll (){
-	List<Produto> list = new ArrayList<>();
-	list.add(new Produto(999999999, "214599", "TRYPTIC SOY AGAR - 500G", "DIFCO/USA", 479.0));
-	list.add(new Produto(99999476, "217699", "POLIMIXINA B - 500G", "DIFCO/USA", 90.0));
-	list.add(new Produto(99999999, "AS-214599", "PLATE COUNT AGAR - 500G", "DIFCO/USA", 66.0));
-	list.add(new Produto(99999999, "214599", "LAURYL TRYPTOSE BROTH - 500G", "DIFCO/USA", 22.0));
-	return list;
-}  */
 	
 	 public List<Produto> findAll() {
 		

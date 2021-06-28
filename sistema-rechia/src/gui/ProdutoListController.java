@@ -26,6 +26,7 @@ import javafx.stage.Stage;
 import model.entities.Produto;
 import model.services.ProdutoService;
 
+
 public class ProdutoListController implements Initializable {
 	
 	private ProdutoService service;
@@ -56,7 +57,8 @@ public class ProdutoListController implements Initializable {
 	@FXML
 	public void onBtNewAction(ActionEvent event) {
 		Stage parentStage = Utils.currentStage(event);
-		createDialogForm("/gui/ProdutoForm.fxml", parentStage);
+		Produto obj = new Produto();
+		createDialogForm(obj,"/gui/ProdutoForm.fxml", parentStage);
 	}
 	
 	public void setProdutoService(ProdutoService service) {
@@ -90,11 +92,16 @@ public class ProdutoListController implements Initializable {
 		tableViewProduto.setItems(obsList);
 	}
 	
-	private void createDialogForm(String absoluteName, Stage parentStage) {
+	private void createDialogForm(Produto obj, String absoluteName, Stage parentStage) {
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource(absoluteName));
 			Pane pane = loader.load();
-
+			
+			ProdutoFormController controller = loader.getController();
+			controller.setProduto(obj);
+			controller.updateFormData();
+			
+			
 			Stage dialogStage = new Stage();
 			dialogStage.setTitle("Cadastro de novo produto");
 			dialogStage.setScene(new Scene(pane));
