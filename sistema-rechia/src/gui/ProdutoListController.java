@@ -8,6 +8,7 @@ import java.util.ResourceBundle;
 import application.Main;
 import gui.util.Alerts;
 import gui.util.Utils;
+import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -17,6 +18,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -38,6 +40,9 @@ public class ProdutoListController implements Initializable {
 
 	@FXML
 	private TableColumn<Produto, String> tableColumnReferencia;
+
+	@FXML
+	private TableColumn<Produto, Produto> tableColumnEdit;
 
 	@FXML
 	private TableColumn<Produto, String> tableColumnNome;
@@ -89,6 +94,7 @@ public class ProdutoListController implements Initializable {
 		List<Produto> list = service.findAll();
 		obsList = FXCollections.observableArrayList(list);
 		tableViewProduto.setItems(obsList);
+		initEditButtons();
 	}
 
 	private void createDialogForm(Produto obj, String absoluteName, Stage parentStage) {
@@ -111,6 +117,25 @@ public class ProdutoListController implements Initializable {
 		} catch (IOException e) {
 			Alerts.showAlert("IO Exception", "Error loading view", e.getMessage(), AlertType.ERROR);
 		}
+	}
+
+	private void initEditButtons() {
+		tableColumnEdit.setCellValueFactory(param -> new ReadOnlyObjectWrapper<>(param.getValue()));
+		tableColumnEdit.setCellFactory(param -> new TableCell<Produto, Produto>() {
+			private final Button button = new Button("Editar");
+
+			@Override
+			protected void updateItem(Produto obj, boolean empty) {
+				super.updateItem(obj, empty);
+				if (obj == null) {
+					setGraphic(null);
+					return;
+				}
+				setGraphic(button);
+				button.setOnAction(
+						event -> createDialogForm(obj, "/gui/ProdutoForm.fxml", Utils.currentStage(event)));
+			}
+		});
 	}
 
 }

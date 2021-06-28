@@ -86,7 +86,8 @@ public class ProdutoService {
 			conn = DB.getConnection();
 
 			st = conn.prepareStatement(
-					"UPDATE produto " + "SET referencia = ?, nome = ?, marca = ?, preco = ?," + "WHERE codInterno = ?");
+					"UPDATE produto " + "SET referencia = ?, nome = ?, marca = ?, preco = ?" + 
+					"WHERE codInterno = ?");
 
 			st.setString(1, obj.getReferencia());
 			st.setString(2, obj.getNome());
@@ -104,11 +105,11 @@ public class ProdutoService {
 
 	public void saveOrUpdate(Produto obj) {
 
-		/* if (obj.getCodInterno() == null) { */
-			insert(obj);
-/*
+		 if (obj.getCodInterno() == null) { 
+			insert(obj);;
+
 		} else {
-			VERIFICAR CLAUSULA IF 
-		}*/
+			update(obj);
+		}
 	}
 }
