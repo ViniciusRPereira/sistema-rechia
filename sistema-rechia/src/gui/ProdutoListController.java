@@ -8,6 +8,7 @@ import java.util.ResourceBundle;
 
 import application.Main;
 import db.DbIntegrityException;
+import gui.listeners.DataChangeListener;
 import gui.util.Alerts;
 import gui.util.Utils;
 import javafx.beans.property.ReadOnlyObjectWrapper;
@@ -31,7 +32,7 @@ import javafx.stage.Stage;
 import model.entities.Produto;
 import model.services.ProdutoService;
 
-public class ProdutoListController implements Initializable {
+public class ProdutoListController implements Initializable, DataChangeListener {
 
 	private ProdutoService service;
 
@@ -112,6 +113,7 @@ public class ProdutoListController implements Initializable {
 			ProdutoFormController controller = loader.getController();
 			controller.setProduto(obj);
 			controller.setProdutoService(new ProdutoService());
+			controller.subscribeDataChangeListener(this);
 			controller.updateFormData();
 
 			Stage dialogStage = new Stage();
@@ -178,5 +180,9 @@ public class ProdutoListController implements Initializable {
 			}
 		}
 	}
-
+	
+	@Override
+	public void onDataChanged() {
+		updateTableView();
+	}
 }

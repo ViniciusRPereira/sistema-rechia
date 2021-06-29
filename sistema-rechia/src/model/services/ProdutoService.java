@@ -67,7 +67,7 @@ public class ProdutoService {
 				if (rs.next()) {
 					int id = rs.getInt(1);
 					obj.setCodInterno(id);
-				}
+				} 
 
 			} else {
 				throw new DbException("Unexpected error! No rows affected!");
@@ -104,15 +104,13 @@ public class ProdutoService {
 	}
 
 	public void saveOrUpdate(Produto obj) {
-
 		 if (obj.getCodInterno() == null) { 
-			insert(obj);;
-
-		} else {
+			insert(obj);
+		 } else {
 			update(obj);
-		}
-	}
-	
+			}
+	} 
+		 
 	public void deleteById(Integer codInterno) {
 		Connection conn = null;
 		PreparedStatement st = null;
