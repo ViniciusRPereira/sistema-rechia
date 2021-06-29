@@ -14,31 +14,26 @@
               <menus>
                 <Menu mnemonicParsing="false" text="Clientes">
                      <items>
-                    <MenuItem mnemonicParsing="false" onAction="#onMenuEmConstrucaoAction" text="Cadastrar Cliente" />
                         <MenuItem mnemonicParsing="false" onAction="#onMenuEmConstrucaoAction" text="Listar Clientes" />
                      </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Pedidos">
                      <items>
-                        <MenuItem mnemonicParsing="false" onAction="#onMenuEmConstrucaoAction" text="Cadastrar Pedido" />
                         <MenuItem mnemonicParsing="false" onAction="#onMenuEmConstrucaoAction" text="Listar Pedidos" />
                      </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Produtos">
                      <items>
-                        <MenuItem mnemonicParsing="false" onAction="#onMenuEmConstrucaoAction" text="Cadastrar Produto" />
                         <MenuItem fx:id="listarProduto" mnemonicParsing="false" onAction="#onMenuItemProdutoListView" text="Listar Produtos" />
                      </items>
                 </Menu>
                   <Menu mnemonicParsing="false" text="Visitas">
                      <items>
-                        <MenuItem mnemonicParsing="false" onAction="#onMenuEmConstrucaoAction" text="Cadastrar Visita" />
                         <MenuItem mnemonicParsing="false" onAction="#onMenuEmConstrucaoAction" text="Listar Visitas" />
                      </items>
                   </Menu>
                   <Menu mnemonicParsing="false" text="Amostras">
                      <items>
-                        <MenuItem mnemonicParsing="false" onAction="#onMenuEmConstrucaoAction" text="Cadastrar Amostra" />
                         <MenuItem mnemonicParsing="false" onAction="#onMenuEmConstrucaoAction" text="Listar Amostras" />
                      </items>
                   </Menu>
