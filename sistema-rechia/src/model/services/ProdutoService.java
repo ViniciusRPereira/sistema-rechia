@@ -112,4 +112,28 @@ public class ProdutoService {
 			update(obj);
 		}
 	}
+	
+	public void deleteById(Integer codInterno) {
+		Connection conn = null;
+		PreparedStatement st = null;
+		try {
+			conn = DB.getConnection();
+			st = conn.prepareStatement(
+				"DELETE FROM produto WHERE codInterno = ?");
+
+			st.setInt(1, codInterno);
+
+			st.executeUpdate();
+		}
+		catch (SQLException e) {
+			throw new DbIntegrityException(e.getMessage());
+		} 
+		finally {
+			DB.closeStatement(st);
+		}
+	}
+	
+	 public void remove(Produto obj) {
+		deleteById(obj.getCodInterno());
+	}
 }

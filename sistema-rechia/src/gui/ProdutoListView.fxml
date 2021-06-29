@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="328.0" prefWidth="410.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ProdutoListController">
+<VBox fx:id="" prefHeight="309.0" prefWidth="341.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ProdutoListController">
    <children>
       <Label text="Produtos :  ">
          <font>
@@ -32,6 +32,7 @@
             <TableColumn fx:id="tableColumnMarca" prefWidth="75.0" text="Marca" />
             <TableColumn fx:id="tableColumnPreco" prefWidth="75.0" text="Preço" />
             <TableColumn fx:id="tableColumnEdit" prefWidth="75.0" />
+            <TableColumn fx:id="tableColumnRemove" prefWidth="75.0" />
         </columns>
       </TableView>
    </children>
