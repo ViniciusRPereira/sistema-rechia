@@ -103,13 +103,13 @@ public class ProdutoService {
 		}
 	}
 
-	public void saveOrUpdate(Produto obj) {
+	/* public void saveOrUpdate(Produto obj) {
 		 if (obj.getCodInterno() == null) { 
 			insert(obj);
 		 } else {
 			update(obj);
 			}
-	} 
+	} NECESSITA CORREÇÃO */ 
 		 
 	public void deleteById(Integer codInterno) {
 		Connection conn = null;

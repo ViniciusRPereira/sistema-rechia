@@ -53,6 +53,9 @@ public class ProdutoFormController implements Initializable {
 
 	@FXML
 	private Button btCadastrar;
+	
+	@FXML
+	private Button btAtualizar;
 
 	@FXML
 	private Button btCancelar;
@@ -80,7 +83,25 @@ public class ProdutoFormController implements Initializable {
 		try {
 		entity = getFormData();
 		service.insert(entity);
-		//service.saveOrUpdate(entity);
+		notifyDataChangeListeners();
+		Utils.currentStage(event).close();
+		}
+		catch (DbException e) {
+			Alerts.showAlert("Error saving object", null, e.getMessage(), AlertType.ERROR);
+		}
+	}
+	
+	@FXML
+	public void onBtAtualizar(ActionEvent event) {
+		if (entity == null) {
+			throw new IllegalStateException("Entity was null");
+		}
+		if (service == null) {
+			throw new IllegalStateException("Service was null");
+		}
+		try {
+		entity = getFormData();
+		service.update(entity);
 		notifyDataChangeListeners();
 		Utils.currentStage(event).close();
 		}

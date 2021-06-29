@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane prefHeight="249.0" prefWidth="404.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ProdutoFormController">
+<AnchorPane onDragDetected="#onBtCancelar" prefHeight="249.0" prefWidth="404.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ProdutoFormController">
    <children>
-      <GridPane layoutX="14.0" layoutY="21.0" prefHeight="173.0" prefWidth="349.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="21.0">
+      <GridPane fx:id="gPane" layoutX="14.0" layoutY="21.0" prefHeight="173.0" prefWidth="349.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="21.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="112.0" minWidth="10.0" prefWidth="77.0" />
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="179.0" minWidth="10.0" prefWidth="166.0" />
@@ -34,11 +34,12 @@
             <TextField fx:id="txtNome" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <TextField fx:id="txtMarca" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <TextField fx:id="txtPreco" prefHeight="25.0" prefWidth="58.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <Label fx:id="LabelErrorCodInterno" text="Label" GridPane.columnIndex="2" />
-            <Label fx:id="LabelErroPreco" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <Label fx:id="LabelErrorCodInterno" GridPane.columnIndex="2" />
+            <Label fx:id="LabelErroPreco" GridPane.columnIndex="2" GridPane.rowIndex="4" />
          </children>
       </GridPane>
-      <Button fx:id="btCadastrar" layoutX="71.0" layoutY="206.0" mnemonicParsing="false" onAction="#onBtCadastrar" text="Cadrastrar" />
-      <Button fx:id="btCancelar" layoutX="182.0" layoutY="206.0" mnemonicParsing="false" onAction="#onBtCancelar" text="Cancelar" />
+      <Button fx:id="btCadastrar" layoutX="33.0" layoutY="206.0" mnemonicParsing="false" onAction="#onBtCadastrar" text="Cadrastrar" />
+      <Button fx:id="btCancelar" layoutX="242.0" layoutY="206.0" mnemonicParsing="false" onAction="#onBtCancelar" text="Cancelar" />
+      <Button fx:id="btAtualizar" layoutX="117.0" layoutY="206.0" mnemonicParsing="false" onAction="#onBtAtualizar" text="Atualizar" />
    </children>
 </AnchorPane>
